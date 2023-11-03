@@ -1,0 +1,37 @@
+# I have created the following datasets, Famous Singers and Genres, which this analysis utilizes:
+
+Create TABLE famous_singers (id INTEGER
+PRIMARY KEY, name TEXT, genre INTEGER);
+
+INSERT INTO famous_singers VALUES (1, "Taylor Swift", 1);
+INSERT INTO famous_singers VALUES (2, "Drake", 2);
+INSERT INTO famous_singers VALUES (3, "Playboi Carti", 2);
+INSERT INTO famous_singers VALUES (4, "Morgan Wallen",3);
+INSERT INTO famous_singers VALUES (5, "Olivia Rodrigo", 1);
+INSERT INTO famous_singers VALUES (6, "Luke Combs", 3);
+INSERT INTO famous_singers VALUES (7, "Travis Scott",2);
+INSERT INTO famous_singers VALUES (8, "Ed Sheeran", 1);
+INSERT INTO famous_singers VALUES (9, "Khalid", 4);
+INSERT INTO famous_singers VALUES (10, "Usher",4);
+INSERT INTO famous_singers VALUES (11, "Carrie Underwood",3);
+INSERT INTO famous_singers VALUES (12, "Steven Tyler",5);
+SELECT * FROM famous_singers;
+
+CREATE TABLE genre (id INTEGER PRIMARY KEY, name TEXT, genre_id INTEGER);
+
+INSERT INTO genre VALUES (1, "Pop",1);
+INSERT INTO genre VALUES (2, "Rap",2);
+INSERT INTO genre VALUES (3, "Country",3);
+INSERT INTO genre VALUES (4, "R&B", 4);
+INSERT INTO genre VALUES (5, "Rock", 5);
+SELECT * FROM genre;
+
+# Analysis: 
+
+# Select the name of famous singers and sort them into their genre of music; order by genre. 
+
+SELECT singers.name AS Singers, genre.name AS Genre
+FROM famous_singers as singers
+LEFT OUTER JOIN genre
+ON genre.id = genre
+ORDER BY genre;
